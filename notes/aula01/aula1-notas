@@ -1,0 +1,316 @@
+O código/respostas dessa aula se encontra no grupo de estudos do Telegram, na mensagem do dia 17/01/21 as 07:34.
+
+Aula #01 - Começando com Python do ZERO
+https://www.youtube.com/watch?v=1xXK_z9M6yk&t
+
+1.0) O problema do negócio
+https://sejaumdatascientist.com/os-5-projetos-de-data-science-que-fara-o-recrutador-olhar-para-voce/
+
+- Empresa: House Rocket
+	- House Rocket plataforma de compras e vendas de imóveis
+	
+- Qual o problema?
+	- O CEO da emrpesa gostaria de maximizar o lucro da empresa encontrando bons negócios.
+
+- A principal estrategia?
+	- Fontes externas para encontrar bons negócios.
+	
+- As perguntas do CEO da House Rocket
+	1. Quantas casas estão disponíveis para compra?
+	2. Quantos atributos as casas possuem (número de quartos, num. garagens, m2, vista para o mar e etc)
+	3. Quais são os atributos?
+	4. Qual a casa mais cara do portfólio (casa com maior valor)?
+	5. Qual a casa com o maior número de quartos?
+	
+2.0) O planejamento da solução 
+
+2.1) Planejamento do PRODUTO FINAL.
+	1. O que eu vou entregar? (Planilha, Texto, Email, Modelos de ML, ...)
+	R: Texto com as respostas
+	
+	2. Como vai ser a entrega?
+	R: Perguntas | Respostas
+	
+	Por exemplo:
+	
+	1. Quantas casas estão disponíveis para compra?
+	R: 2300 imóveis disponíveis para compra
+
+2.2) Planejamento do PROCESSO.
+
+	1. Onde está a informação? (Excel, BD, API, manual)
+	R: https://www.kaggle.com/harlfoxem/housesalesprediction
+	
+	*** DATASET = Conjunto de dados ***
+		
+	2. Como coletar essas informações? (SQL, Python, Streamlit, ...)
+	R: Download (apertar o botão)
+	
+	3. Responder as perguntas?
+	3.1 Quantas casas estão disponíveis para a compra?
+	R: Contar o número de linhas do conjunto de dados.
+	3.2. Quantos atributos as casas possuem? (número de quartos, num. garagens, m2, vista para o mar e etc)
+	R: Contar o número de colunas do conjunto de dados.
+	3.3 Quais são os atributos?
+	R: Mostrar o nome das colunas (automatico)
+	3.4 Qual a casa mais cara do portfólio (casa coim maior valor)?
+	R: Ordenar as linhas pela coluna de preço (atributos)
+	3.5 Qual a casa com o maior número de quartos?
+	R: Ordernar as linhas pela coluna de numero de quartos.
+	
+
+2.3) Planejamento do FERRAMENTAS.
+
+	1. Quais ferramentas eu posso usar?
+		- Excel - facil de usar, barato, muito usado pelos times não tecnicos. Mas tem o poder de processamento  limitado (1 milhao de linhas)
+		
+		Big Data - VVV - Volume, Velocidade, Variedade. Nada mais é do que um profissional que processa dados em grande volume.
+		
+		Como é gerado dados?
+		
+		Dados = Pessoas + Produto
+		
+		Clientes moda + Website = Dados de navegação (View, Clicks, Add to Cart, Size, Color)
+		
+		- Python - 
+		- Processar e Manipular -> Insights
+		
+		Humano > COmando Verbal/Visual > Doguinho Pidão > realização a ação > mostra o resultado
+		
+		Meigarom > "Senta" > Kika > Sentar > Kika Sentada
+		
+		Traduzindo para a programação:
+		
+		Humano > Comando Escrito > Computador > realiza a ação > mostrao resultado
+		
+		Humano > COmando EScrito > Copilador/Interpretador > linguagem de máquina (binário) > Processador > Executar a ação > mostra o resultado
+		
+		Exemplo de comandos
+		Meigarom = "Selecione 2 colunas"
+		Meigarom - "data[[x,y]]"
+		
+		Meigarom - "Ordena as linhas do conjunto de dados pela coluna Z"
+		Meigarom - "data.sort_values( Z )"
+		
+		Meigarom - "Ordena as linhas do conjunto de dados pela coluna Z de forma crescente"
+		Meigarom - "data.sort_values( Z, ascending=True )"
+		
+		Para responder as perguntas do CEO, seguinte comandos:
+		
+		Meigarom -> Contar o número de linhas do conjunto de dados.
+		Meigarom ->  Contar o número de colunas do conjunto de dados.
+		Meigarom -> Mostrar o nome das colunas (automatico)
+		Meigarom -> Ordenar as linhas pela coluna de preço (atributos)
+		Meigarom -> Ordernar as linhas pela coluna de numero de quartos.
+		
+4.0 Como escrever código Python?
+	
+	Editor de Texto
+		- Bloco d notas
+		- Gedit
+		- TextEdit
+		
+	Interpretador ( Comandos -> Linguagem de máquina ( binários ) -> processador
+		- Python 2.x
+		- Python 3.x
+		
+	IDE (Interface Development Enviroment) - Ambiente de Desenvolvimento
+		- PyCharm
+		- Spyder
+		- VSCode (Visual Studio Code)
+		- Jupyter Lab
+		
+4.1 Instalando PyCharm
+
+https://www.jetbrains.com/pycharm/download/#section=windows
+
+Lembrar de marcar, no minimo, as caixas Update PATH Variable e Create Associations (.py)
+
+5. Os primeiros comandos em Python
+
+Executar o PROCESSO
+
+1. Onde está a informação? (Excel, BD, API, manual)
+	R: https://www.kaggle.com/harlfoxem/housesalesprediction
+	
+	*** DATASET = Conjunto de dados ***
+		
+	2. Como coletar essas informações? (SQL, Python, Streamlit, ...)
+	R: Download (apertar o botão)
+
+	Meigarom -> Contar o número de linhas do conjunto de dados.
+	Meigarom ->  Contar o número de colunas do conjunto de dados.
+	Meigarom -> Mostrar o nome das colunas (automatico)
+	Meigarom -> Ordenar as linhas pela coluna de preço (atributos)
+	Meigarom -> Ordernar as linhas pela coluna de numero de quartos.
+
+Como eu sei qual o comando para contar o numero de linhas?
+
+5.1 A estrutura de um comando
+
+Ingredientes:
+
+1. Ovos
+2. Chocolate em pó
+3. Farinha de trigo
+4. Fermento
+5. Leite
+
+Modo de preparo:
+
+1. Adicione os ovos no liquidificador
+2. Adicione o chocolate em pó no liquidificador.
+3. Adicione a farinha de trigo no liquidificador.
+4. Bata por 5 minuts
+5. Adicione o fermento.
+6. Misture os ingredientes
+7. Leve ao forno
+
+Modo de preparo -> Manipula -> Ingredientes -> Bolo de Chocolate
+
+Quero abrir uma loja de bolo e ensinar para outras pessoas como fazer bolo?
+
+Ingredientes + Modo de preparo = Receita
+
+Quero abrir uma loja de bolo e ensinar para outras pessoas como fazer bolo?
+
+Bolo de chocolate
+Churros
+Doces
+
+Resumindo:
+
+Livro de Receita	Organiza as receitas
+Receita				Replica Modo de Preparo
+Modo de preparo		Manipula Ingredientes
+
+Em programação:
+
+Biblioteca	Organiza funções
+Funções		Replica Comandos
+Comandos	Manipula Variáves		Manipula Ingredientes
+
+Python é receita de bolo! Ficar atento.
+
+> Variáveis
+
+Exemplo:
+	- CAixa armazenadora
+		- nome: caixa_calcas
+		- armazeno: calças
+		
+		Posso aguardar sapatos dentro da caixa_calcas Não
+		Posso guardar sapatos dentro da caixaa_calcas? Não
+		Posso guardar saia dentro da caixa_calcas? Não
+
+Humano > Comando Escrito > Computador > realiza a ação > mostrao resultado
+		
+Humano > COmando EScrito > Copilador/Interpretador > linguagem de máquina (binário) > Processador > Executar a ação > mostra o resultado
+
+EM programação, deve se evitar o máximo o uso de caracteres latinos como `, ~, ç pois a linguagem de máquina não consegue iterpretar eles da forma correta.
+
+> Função
+	- Sequencia de comandos
+	- TEm um nome
+	- POde ou nao receber parametros de entrada
+	- "O que acontece na função, fica na função".
+	- A Função é uma sequencia de comandos
+	- O nome da função tem que ser o mais próximo de sua responsabilidade
+	- Função ela pode ou não receber/retornar valores
+	
+> Biblioteca
+	- A biblioteca é um agrupamento de funções
+	- Pode ter um apelido "carinhoso"
+	- Precisa ser importado "emprestada"
+	
+Mantra da programação:
+
+"O que eu vou fazer? Qual é a função que faz isso pra mim? E em qual biblioteca esta função está armazenada?"
+
+6. Respondendo as perguntas do CEO
+
+
+- Perguntas do CEO para você:
+
+1. QUantas casas estão disponíveis para compra?
+2. Quantos atribvutos as casas possuem?
+3. Quais são os atributos das casas?
+4. Qual a casa mais cara (casa com o maior valor de venda)?
+5. Qual a casa com o maior número de quartos?
+
+Conte a quantidade de linhas do cojunto de dados
+R: print(data.shape)
+21613 linhas (casas)
+21 colunas (atributos?)
+
+COnte a quantidade de conjunto de dados
+Mostre o nome das colunas do cojunto de dados
+?
+
+'id', 'date', 'price', 'bedrooms', 'bathrooms', 'sqft_living',
+       'sqft_lot', 'floors', 'waterfront', 'view', 'condition', 'grade',
+       'sqft_above', 'sqft_basement', 'yr_built', 'yr_renovated', 'zipcode',
+       'lat', 'long', 'sqft_living15', 'sqft_lot15
+
+Comandos aprendidos conforme as perguntas mais abaixo foram respondidas.
+
+# import pandas as pd
+#data = pd.read_csv('datasets/kc_house_data.csv')
+#
+# data = dataframe kc_house_data.csv
+
+# mostrar qual e o tipo de dado de cada coluna
+print(data.dtypes)
+
+print(data.sum())
+
+# data ['bedrooms'] = data ['bedrooms'].astype ( int64 )
+
+
+	
+Dever de casa (resposta no grupo Comunidade DS no Telegram, mensagem do dia 07/01/21)
+
+- Novas Perguntas do CEO para você:
+
+1. Quantas casas estão disponíveis para compra?
+R: 21613 (quantidade de linhas)
+
+2. Quantos atributos as casas possuem?
+R: 21 (quantidade de colunas)
+
+3. Quais são os atributos das casas?
+R: ID, Data, Preço, Quartos, Banheiros, Área da Sala, Área da casa, Andares, Vista para o mar, Vista, Condição, Qualidade/Grade, Área Terraço, Área Sotão, DT Construção, DT Renovação, CEP/Zip, Latitude, Longitude, Área Sala 15, Área Casa 15
+
+4. Qual a casa mais cara (casa com o maior valor de venda)?
+R: Casa de ID 6762700020, com valor de 7.700.000 USD.
+
+5. Qual a casa com o maior número de quartos?
+R: Casa de ID 2402100895, com 33 quartos.
+
+6. Qual a soma total de quartos do conjuntos de dados?
+R: 72854
+
+
+7. Quantas casas possuem 2 banheiros?
+R: 13172
+
+8. Qual o preço medio de todas as casas do conjunto de dados?
+R:
+
+
+
+9. Qual o préco médio de casas com 2 banheiros?
+10. Qual o preço mínimo entre as casas com 3 quartos?
+11. Quantas casas possuem mais de 300 metros quadrados na sala de estar??
+12. Quantas casas tem mais de 2 andares?
+13. Quantas casas tem vista para o mar?
+14. Das casas com vista para o mar, quantas tem 3 quartos?
+15.  Das casas com mais de 300 metros quadrados de sala de estar, quantas tem mais de 2 banheiros?
+
+Apresentar respostas das perguntas acima do mesmo modo que foi feito no exemplo do início dessa aula, formato de perguntas e repsostas, como se fosse responder um e-mail com essas informações.
+
+
+
+Ao acabar de responder todas.. ler todo esse post abaixo e ver quais perguntas a mais podem ser feitas/extender mais o estudo em cima do que foi aprendido até aqui:
+
+https://sejaumdatascientist.com/os-5-projetos-de-data-science-que-fara-o-recrutador-olhar-para-voce/
