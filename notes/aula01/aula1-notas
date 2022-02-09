@@ -295,16 +295,27 @@ R: 72854
 R: 13172
 
 8. Qual o preço medio de todas as casas do conjunto de dados?
-R:
+R: 540,088 USD
 
 
+9. Qual o preço médio de casas com 2 banheiros?
+R: 
 
-9. Qual o préco médio de casas com 2 banheiros?
 10. Qual o preço mínimo entre as casas com 3 quartos?
+R: 
+
 11. Quantas casas possuem mais de 300 metros quadrados na sala de estar??
+R: 
+
 12. Quantas casas tem mais de 2 andares?
+R: 
+
 13. Quantas casas tem vista para o mar?
+R: 
+
 14. Das casas com vista para o mar, quantas tem 3 quartos?
+R: 
+
 15.  Das casas com mais de 300 metros quadrados de sala de estar, quantas tem mais de 2 banheiros?
 
 Apresentar respostas das perguntas acima do mesmo modo que foi feito no exemplo do início dessa aula, formato de perguntas e repsostas, como se fosse responder um e-mail com essas informações.

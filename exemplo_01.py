@@ -52,8 +52,9 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 #print(data[['id','bathrooms']].sort_values('bathrooms',ascending=False))
 #print(data.bathrooms>=2)
 # criar novo DF contendo apenas casas com mais de 2 banheiros. Ira gerar um DF boolean
-#baths2 = data[baths2true]
+
 #baths2true = data.bathrooms>=2
+#baths2 = data[baths2true]
 
 # como o resultado do filtro anterior é um DF boolean, entao se precisa criar um novo DF
 # contendo apenas os resultados True, para so entao se poder manipular o mesmo
@@ -62,7 +63,24 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 # agora se conta a QTD de linhas da dada coluna filtrada
 #print(baths2['bathrooms'].count())
 
-# Qual o preço medio de todas as casas do conjunto de dados?
-#print(data['price'].mean())
+# 8 - Qual o preço medio de todas as casas do conjunto de dados?
+# print(data['price'].mean())
 #print(data.dtypes)
 
+# 9. Qual o preço médio de casas com 2 banheiros?
+#
+#print(data.dtypes)
+#data.bathrooms>=2
+baths2True = (data['bathrooms'] >= 2)
+#print(baths2true)
+bathsIn = data[baths2True]
+# ainda de fato nao entendi o motivo de ter sido armazenado filtrado somente as linhas com o resultado True no DF (Dataframe) bathsIn acima
+# poderia ter sido usado o codigo abaixo, em parte, para responder a questao 7
+print(bathsIn['bathrooms'].value_counts() & bathsIn['price'])
+
+
+
+
+#d_q9 = data[data.bathrooms>=2 & data.price]
+#print(d_q9)
+#
