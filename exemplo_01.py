@@ -66,21 +66,52 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 # 8 - Qual o preço medio de todas as casas do conjunto de dados?
 # print(data['price'].mean())
 #print(data.dtypes)
-
-# 9. Qual o preço médio de casas com 2 banheiros?
 #
+#================================================#
+# 9. Qual o preço médio de casas com 2 banheiros?#
+# q9 code below
+##
 #print(data.dtypes)
 #data.bathrooms>=2
-baths2True = (data['bathrooms'] >= 2)
+#baths2True = (data['bathrooms'] >= 2)
 #print(baths2true)
-bathsIn = data[baths2True]
-# ainda de fato nao entendi o motivo de ter sido armazenado filtrado somente as linhas com o resultado True no DF (Dataframe) bathsIn acima
+#bathsIn2 = data[baths2True]
+#
 # poderia ter sido usado o codigo abaixo, em parte, para responder a questao 7
-print(bathsIn['bathrooms'].value_counts() & bathsIn['price'])
-
-
-
-
+# print(bathsIn2['bathrooms'].value_counts() & bathsIn2['price'])
+#
+#
+#bathsOk = bathsIn2['bathrooms'].value_counts()
+#
+#print(bathsOk[:])
+#print(bathsOk[:] , bathsIn2[['id','price']])
+#
+#print(bathsIn2['price'].mean())
+#
+# q9 code above ===============================#
+# extra code
 #d_q9 = data[data.bathrooms>=2 & data.price]
 #print(d_q9)
+#
+# ===================================================== #
+# 10. Qual o preço mínimo entre as casas com 3 quartos? #
+# q10 code below ====================================== #
+# baths3True = (data['bathrooms'] >= 3)
+# bathsIn3 = data[baths3True]
+# print(bathsIn3[['id','bedrooms','price']].sort_values('price',ascending=True))
+#
+# q10 code above
+#
+# ==========================================================================#
+# 11. Quantas casas possuem mais de 300 metros quadrados na sala de estar?? #
+# q11 code below
+#
+# Filtrar DF para ele conter apenas as casas com mais de 300 metros e contar esse resultado
+#
+print(data.sort_values (by="sqft_living15"))
+# q11_lroom = (data['sqft_living15'] >= 3)
+# bathsIn3 = data[baths3True]
+# print(bathsIn3[['id','bedrooms','price']].
+
+# q11 code above
 #
