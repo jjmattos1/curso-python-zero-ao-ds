@@ -124,8 +124,8 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 #print('\n')
 #print('Depois do filtro:')
 
-#q11_lroomFilter = (data['sqft_living'] >= 300)
-#q11_lroomOk = data[q11_lroomFilter]
+q11_lroomFilter = (data['sqft_living'] >= 300)
+q11_lroomOk = data[q11_lroomFilter]
 
 #print('Depois do filtro:')
 #print(q11_lroomOk.shape)
@@ -159,11 +159,11 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 #
 # q13 code below
 #
-q13_DF = data
+#q13_DF = data
 #print(q13_DF.dtypes)
 #print(q13_DF[['id','waterfront']])
-q13_DFfilter = (q13_DF['waterfront'] > 0)
-q13_DF = q13_DF[q13_DFfilter]
+#q13_DFfilter = (q13_DF['waterfront'] > 0)
+#q13_DF = q13_DF[q13_DFfilter]
 #print(q13_DF.shape)
 #
 # q13 code above
@@ -174,8 +174,27 @@ q13_DF = q13_DF[q13_DFfilter]
 #
 # q14 code below
 #
-q14_DF = q13_DF
-q14_DFfilter = (q14_DF['bedrooms'] == 3)
-q14_DF = q14_DF[q14_DFfilter]
+#q14_DF = q13_DF
+#q14_DFfilter = (q14_DF['bedrooms'] == 3)
+#q14_DF = q14_DF[q14_DFfilter]
 ##print(q14_DF[['id','waterfront','bedrooms']])
-print(q14_DF.shape)
+#print(q14_DF.shape)
+#
+# =================================#
+#
+# 15.  Das casas com mais de 300 metros quadrados de sala de estar, quantas tem mais de 2 banheiros?
+#
+# q15 code below
+#
+# habilitei a seção do código da q11 novamente para compor essa solução abaixo
+#
+q15_DF = q11_lroomOk
+q15_DFfilter = (q15_DF['bathrooms'] >= 2)
+q15_DFfiltered = q15_DF[q15_DFfilter]
+#print(q15_DFfiltered.dtypes)
+
+print(q15_DFfiltered[['id','sqft_living','bathrooms']])
+
+#
+# q15 code above
+#
