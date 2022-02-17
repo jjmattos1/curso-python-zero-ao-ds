@@ -143,14 +143,39 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 #print(data.dtypes)
 # filtrar DF pela coluna floors >= 2 e exibir apenas as colunas id e floors para conferir
 #
-q12_DFfloors = data
+#q12_DFfloors = data
 ## convertendo do tipo Float para int da coluna "floors", para conseguir efetuar o filtro em questão
-q12_DFfloors['floors'] = q12_DFfloors['floors'].astype(int)
+#q12_DFfloors['floors'] = q12_DFfloors['floors'].astype(int)
 ##print(q12_DFfloors['floors'])
-q12_floorsFilter = (q12_DFfloors['floors'] >= 2)
+#q12_floorsFilter = (q12_DFfloors['floors'] >= 2)
 #print(q12_floorsFilter)
-q12_floors = data[q12_floorsFilter]
-print(q12_floors.shape)
+#q12_floors = data[q12_floorsFilter]
+#print(q12_floors.shape)
+# q12 code above
 #
 # =================================#
 #
+# 13. Quantas casas tem vista para o mar?
+#
+# q13 code below
+#
+q13_DF = data
+#print(q13_DF.dtypes)
+#print(q13_DF[['id','waterfront']])
+q13_DFfilter = (q13_DF['waterfront'] > 0)
+q13_DF = q13_DF[q13_DFfilter]
+#print(q13_DF.shape)
+#
+# q13 code above
+#
+# =================================#
+#
+# 14. Das casas com vista para o mar, quantas tem 3 quartos?
+#
+# q14 code below
+#
+q14_DF = q13_DF
+q14_DFfilter = (q14_DF['bedrooms'] == 3)
+q14_DF = q14_DF[q14_DFfilter]
+##print(q14_DF[['id','waterfront','bedrooms']])
+print(q14_DF.shape)
