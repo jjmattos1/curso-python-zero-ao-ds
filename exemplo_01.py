@@ -93,25 +93,64 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 #d_q9 = data[data.bathrooms>=2 & data.price]
 #print(d_q9)
 #
-# ===================================================== #
+# ================================ #
 # 10. Qual o preço mínimo entre as casas com 3 quartos? #
-# q10 code below ====================================== #
+#
+# q10 code below ==================================#
+#
 # baths3True = (data['bathrooms'] >= 3)
 # bathsIn3 = data[baths3True]
 # print(bathsIn3[['id','bedrooms','price']].sort_values('price',ascending=True))
 #
 # q10 code above
 #
-# ==========================================================================#
+# =================================#
+#
 # 11. Quantas casas possuem mais de 300 metros quadrados na sala de estar?? #
+#
 # q11 code below
 #
+# =================================#
 # Filtrar DF para ele conter apenas as casas com mais de 300 metros e contar esse resultado
-#
-print(data.sort_values (by="sqft_living15"))
-# q11_lroom = (data['sqft_living15'] >= 3)
-# bathsIn3 = data[baths3True]
-# print(bathsIn3[['id','bedrooms','price']].
 
+# validando no visual se tem imóvel com menos de 300. E tem apenas 1.
+# q11_lroom = data[['id','sqft_living']]
+#print(q11_lroom.sort_values (by='sqft_living',ascending=True))
+#print('Antes do filtro:')
+#print(data.shape)
+
+# relembrando colunas do DF
+#print(data.dtypes)
+#print('\n')
+#print('Depois do filtro:')
+
+#q11_lroomFilter = (data['sqft_living'] >= 300)
+#q11_lroomOk = data[q11_lroomFilter]
+
+#print('Depois do filtro:')
+#print(q11_lroomOk.shape)
+#
 # q11 code above
+#
+# =================================#
+#
+# 12. Quantas casas tem mais de 2 andares?
+#
+# q12 code below
+#
+# =================================#
+#
+#print(data.dtypes)
+# filtrar DF pela coluna floors >= 2 e exibir apenas as colunas id e floors para conferir
+#
+q12_DFfloors = data
+## convertendo do tipo Float para int da coluna "floors", para conseguir efetuar o filtro em questão
+q12_DFfloors['floors'] = q12_DFfloors['floors'].astype(int)
+##print(q12_DFfloors['floors'])
+q12_floorsFilter = (q12_DFfloors['floors'] >= 2)
+#print(q12_floorsFilter)
+q12_floors = data[q12_floorsFilter]
+print(q12_floors.shape)
+#
+# =================================#
 #
