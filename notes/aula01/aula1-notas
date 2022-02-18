@@ -270,7 +270,7 @@ print(data.sum())
 	
 Dever de casa (resposta no grupo Comunidade DS no Telegram, mensagem do dia 07/01/21)
 
-- Novas Perguntas do CEO para você:
+- Novas Perguntas do CEO para voc:
 
 1. Quantas casas estão disponíveis para compra?
 R: 21613 (quantidade de linhas)
@@ -292,7 +292,7 @@ R: 72854
 
 
 7. Quantas casas possuem 2 banheiros?
-R: 13172
+R: 1930
 
 8. Qual o preço medio de todas as casas do conjunto de dados?
 R: 540,088 USD

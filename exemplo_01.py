@@ -53,7 +53,7 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 #print(data.bathrooms>=2)
 # criar novo DF contendo apenas casas com mais de 2 banheiros. Ira gerar um DF boolean
 
-#baths2true = data.bathrooms>=2
+#baths2true = data.bathrooms==2
 #baths2 = data[baths2true]
 
 # como o resultado do filtro anterior é um DF boolean, entao se precisa criar um novo DF
@@ -73,9 +73,9 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 ##
 #print(data.dtypes)
 #data.bathrooms>=2
-#baths2True = (data['bathrooms'] >= 2)
+baths2True = (data['bathrooms'] == 2)
 #print(baths2true)
-#bathsIn2 = data[baths2True]
+bathsIn2 = data[baths2True]
 #
 # poderia ter sido usado o codigo abaixo, em parte, para responder a questao 7
 # print(bathsIn2['bathrooms'].value_counts() & bathsIn2['price'])
@@ -86,12 +86,12 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 #print(bathsOk[:])
 #print(bathsOk[:] , bathsIn2[['id','price']])
 #
-#print(bathsIn2['price'].mean())
+print(bathsIn2['price'].mean())
 #
 # q9 code above ===============================#
 # extra code
-#d_q9 = data[data.bathrooms>=2 & data.price]
-#print(d_q9)
+d_q9 = data[data.bathrooms==2 & data.price]
+print(d_q9)
 #
 # ================================ #
 # 10. Qual o preço mínimo entre as casas com 3 quartos? #
@@ -124,8 +124,8 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 #print('\n')
 #print('Depois do filtro:')
 
-q11_lroomFilter = (data['sqft_living'] >= 300)
-q11_lroomOk = data[q11_lroomFilter]
+#q11_lroomFilter = (data['sqft_living'] >= 300)
+#q11_lroomOk = data[q11_lroomFilter]
 
 #print('Depois do filtro:')
 #print(q11_lroomOk.shape)
@@ -146,7 +146,8 @@ q11_lroomOk = data[q11_lroomFilter]
 #q12_DFfloors = data
 ## convertendo do tipo Float para int da coluna "floors", para conseguir efetuar o filtro em questão
 #q12_DFfloors['floors'] = q12_DFfloors['floors'].astype(int)
-##print(q12_DFfloors['floors'])
+#print(q12_DFfloors['floors'])
+# verificar uso do astype(int64) no Linux, pois no Android mesmo com a biblioteca numpy instalada, deu como não reconhecido.
 #q12_floorsFilter = (q12_DFfloors['floors'] >= 2)
 #print(q12_floorsFilter)
 #q12_floors = data[q12_floorsFilter]
@@ -188,13 +189,11 @@ q11_lroomOk = data[q11_lroomFilter]
 #
 # habilitei a seção do código da q11 novamente para compor essa solução abaixo
 #
-q15_DF = q11_lroomOk
-q15_DFfilter = (q15_DF['bathrooms'] >= 2)
-q15_DFfiltered = q15_DF[q15_DFfilter]
+#q15_DF = q11_lroomOk
+#q15_DFfilter = (q15_DF['bathrooms'] >= 2)
+#q15_DFfiltered = q15_DF[q15_DFfilter]
 #print(q15_DFfiltered.dtypes)
-
-print(q15_DFfiltered[['id','sqft_living','bathrooms']])
-
+#print(q15_DFfiltered[['id','sqft_living','bathrooms']])
 #
 # q15 code above
 #
