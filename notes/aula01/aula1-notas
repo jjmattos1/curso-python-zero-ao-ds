@@ -274,50 +274,65 @@ Dever de casa (resposta no grupo Comunidade DS no Telegram, mensagem do dia 07/0
 
 1. Quantas casas estão disponíveis para compra?
 R: 21613 (quantidade de linhas)
+# resposta correta
 
 2. Quantos atributos as casas possuem?
 R: 21 (quantidade de colunas)
+# resposta correta
 
 3. Quais são os atributos das casas?
 R: ID, Data, Preço, Quartos, Banheiros, Área da Sala, Área da casa, Andares, Vista para o mar, Vista, Condição, Qualidade/Grade, Área Terraço, Área Sotão, DT Construção, DT Renovação, CEP/Zip, Latitude, Longitude, Área Sala 15, Área Casa 15
+# resposta correta
 
 4. Qual a casa mais cara (casa com o maior valor de venda)?
 R: Casa de ID 6762700020, com valor de 7.700.000 USD.
+# resposta correta
 
 5. Qual a casa com o maior número de quartos?
 R: Casa de ID 2402100895, com 33 quartos.
+# resposta correta
 
 6. Qual a soma total de quartos do conjuntos de dados?
 R: 72854
-
+# resposta correta
 
 7. Quantas casas possuem 2 banheiros?
 R: 1930
+# resposta correta
+
+Observação para questões a partir daqui: vai ser preciso remover entradas duplicadas do conjunto de dados. Verificar melhores meios e aplicar no código. Em 22/02/22.
 
 8. Qual o preço medio de todas as casas do conjunto de dados?
 R: 540,088 USD
-
+# resposta correta
 
 9. Qual o preço médio de casas com 2 banheiros?
-R: 632,059 USD
+R: 457889.7186528497
+# resposta correta
 
 10. Qual o preço mínimo entre as casas com 3 quartos?
-R: 154,000 USD
+R: 82,000 USD
+# resposta correta. Eu havia errado antes devido a eu ter feito a lógica doa filtros udando a coluna "bathrooms" ao inves de usar a coluna bedrooms.
 
 11. Quantas casas possuem mais de 300 metros quadrados na sala de estar??
 R: 21612
+# resposta correta
 
 12. Quantas casas tem mais de 2 andares?
 R: 9023
+# resposta incorreta, valor correto é 782 com mais de 2 andares.
 
 13. Quantas casas tem vista para o mar?
 R: 163
+# resposta correta
 
 14. Das casas com vista para o mar, quantas tem 3 quartos?
 R: 64
+# resposta correta
 
 15.  Das casas com mais de 300 metros quadrados de sala de estar, quantas tem mais de 2 banheiros?
 R: 13172
+# resposta incorreta, valor correto é 11242.
 
 Apresentar respostas das perguntas acima do mesmo modo que foi feito no exemplo do início dessa aula, formato de perguntas e repsostas, como se fosse responder um e-mail com essas informações.
 

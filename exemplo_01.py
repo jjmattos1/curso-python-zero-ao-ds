@@ -14,6 +14,7 @@
 # bilioteca - pandas
 
 import pandas as pd
+import numpy as np
 
 data = pd.read_csv('datasets/kc_house_data.csv')
 
@@ -73,9 +74,9 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 ##
 #print(data.dtypes)
 #data.bathrooms>=2
-baths2True = (data['bathrooms'] == 2)
+#baths2True = (data['bathrooms'] == 2)
 #print(baths2true)
-bathsIn2 = data[baths2True]
+#bathsIn2 = data[baths2True]
 #
 # poderia ter sido usado o codigo abaixo, em parte, para responder a questao 7
 # print(bathsIn2['bathrooms'].value_counts() & bathsIn2['price'])
@@ -86,21 +87,21 @@ bathsIn2 = data[baths2True]
 #print(bathsOk[:])
 #print(bathsOk[:] , bathsIn2[['id','price']])
 #
-print(bathsIn2['price'].mean())
+#print(bathsIn2['price'].mean())
 #
 # q9 code above ===============================#
 # extra code
-d_q9 = data[data.bathrooms==2 & data.price]
-print(d_q9)
+#d_q9 = data[data.bathrooms==2 & data.price]
+#print(d_q9)
 #
 # ================================ #
 # 10. Qual o preço mínimo entre as casas com 3 quartos? #
 #
 # q10 code below ==================================#
 #
-# baths3True = (data['bathrooms'] >= 3)
-# bathsIn3 = data[baths3True]
-# print(bathsIn3[['id','bedrooms','price']].sort_values('price',ascending=True))
+#beds3True = (data['bedrooms'] == 3)
+#bedsIn3 = data[beds3True]
+#print(bedsIn3[['id','bedrooms','price']].sort_values('price',ascending=True))
 #
 # q10 code above
 #
@@ -141,17 +142,17 @@ print(d_q9)
 # =================================#
 #
 #print(data.dtypes)
-# filtrar DF pela coluna floors >= 2 e exibir apenas as colunas id e floors para conferir
+# filtrar DF pela coluna floors > 2 e exibir apenas as colunas id e floors para conferir
 #
-#q12_DFfloors = data
+q12_DFfloors = data
 ## convertendo do tipo Float para int da coluna "floors", para conseguir efetuar o filtro em questão
-#q12_DFfloors['floors'] = q12_DFfloors['floors'].astype(int)
+q12_DFfloors['floors'] = np.int64(q12_DFfloors['floors'])
 #print(q12_DFfloors['floors'])
-# verificar uso do astype(int64) no Linux, pois no Android mesmo com a biblioteca numpy instalada, deu como não reconhecido.
-#q12_floorsFilter = (q12_DFfloors['floors'] >= 2)
+# Incluso o uso do numpy para fazer a devida conversao. Ele está importado no início deste script.
+q12_floorsFilter = (q12_DFfloors['floors'] > 2)
 #print(q12_floorsFilter)
-#q12_floors = data[q12_floorsFilter]
-#print(q12_floors.shape)
+q12_floors = data[q12_floorsFilter]
+print(q12_floors.shape)
 # q12 code above
 #
 # =================================#
