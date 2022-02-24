@@ -124,10 +124,14 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 #print(data.dtypes)
 #print('\n')
 #print('Depois do filtro:')
-
+# filtro original q11 abaixo
 #q11_lroomFilter = (data['sqft_living'] >= 300)
 #q11_lroomOk = data[q11_lroomFilter]
-
+#
+# filtro q11 modificado abaixo (para questão 15. Alterei a condição '>=' para '>' conforme é pedido na pergunta q15)
+q11_lroomFilter = (data['sqft_living'] > 300)
+q11_lroomOk = data[q11_lroomFilter]
+#
 #print('Depois do filtro:')
 #print(q11_lroomOk.shape)
 #
@@ -143,17 +147,48 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 #
 #print(data.dtypes)
 # filtrar DF pela coluna floors > 2 e exibir apenas as colunas id e floors para conferir
+# lógica da resposta correta:
+#q12_DFfloors = data
+#print((q12_DFfloors['floors'] > 2).value_counts())
+# Considerar apenas os valores True como resposta.
 #
-q12_DFfloors = data
+#
 ## convertendo do tipo Float para int da coluna "floors", para conseguir efetuar o filtro em questão
-q12_DFfloors['floors'] = np.int64(q12_DFfloors['floors'])
+#q12_DFfloors['floors'] = np.int64(q12_DFfloors['floors'])
 #print(q12_DFfloors['floors'])
 # Incluso o uso do numpy para fazer a devida conversao. Ele está importado no início deste script.
-q12_floorsFilter = (q12_DFfloors['floors'] > 2)
+#q12_floorsFilter = (q12_DFfloors['floors'] > 2)
 #print(q12_floorsFilter)
-q12_floors = data[q12_floorsFilter]
-print(q12_floors.shape)
-# q12 code above
+#q12_floors = data[q12_floorsFilter]
+# nova lógica abaixo
+#print(data['floors'].value_counts())
+#q12_DFfloors.drop_duplicates(subset=['id'], keep=False)
+#===print((q12_DFfloors['floors'] > 2).value_counts())
+#q12_DFfloors = (q12_DFfloors['floors'] > 2)
+#
+#
+### método q12 abaixo  incompleto ###
+# https://www.geeksforgeeks.org/python-program-to-fetch-the-indices-of-true-values-in-a-boolean-list/
+# Method 2
+#
+#
+# Python program to fetch the indices
+# of true values in a Boolean list
+#    
+# using enumerate() + list comprehension 
+# to return true indices. 
+#res = [i for i, val in enumerate(q12_DFfloors) if val] 
+#
+# printing result
+#
+# testando uso da função X library collections2
+#from acollections import Counter
+#
+#print(Counter(res)) 
+#print ("Indices having True values are : " +  str(res))
+### método q12 acima incompleto ###
+
+#q12 code above
 #
 # =================================#
 #
@@ -190,11 +225,12 @@ print(q12_floors.shape)
 #
 # habilitei a seção do código da q11 novamente para compor essa solução abaixo
 #
-#q15_DF = q11_lroomOk
-#q15_DFfilter = (q15_DF['bathrooms'] >= 2)
-#q15_DFfiltered = q15_DF[q15_DFfilter]
-#print(q15_DFfiltered.dtypes)
-#print(q15_DFfiltered[['id','sqft_living','bathrooms']])
+q15_DF = q11_lroomOk
+q15_DFfilter = (q15_DF['bathrooms'] > 2)
+q15_DFfiltered = q15_DF[q15_DFfilter]
+print(q15_DFfiltered.dtypes)
+print(q15_DFfiltered[['id','sqft_living','bathrooms']])
 #
 # q15 code above
 #
+# Depois de prosseguir mais um pouco, se precisa organizar esse script! Atualmente (24/02) ele está uma bagunça!!!

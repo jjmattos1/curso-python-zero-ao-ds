@@ -319,8 +319,8 @@ R: 21612
 # resposta correta
 
 12. Quantas casas tem mais de 2 andares?
-R: 9023
-# resposta incorreta, valor correto é 782 com mais de 2 andares.
+R: 782
+# resposta correta. Anteriormente eu havia errado a lógica.
 
 13. Quantas casas tem vista para o mar?
 R: 163
@@ -331,8 +331,8 @@ R: 64
 # resposta correta
 
 15.  Das casas com mais de 300 metros quadrados de sala de estar, quantas tem mais de 2 banheiros?
-R: 13172
-# resposta incorreta, valor correto é 11242.
+R: 11242
+# resposta correta. Antes eu havia errado a parte lógica.
 
 Apresentar respostas das perguntas acima do mesmo modo que foi feito no exemplo do início dessa aula, formato de perguntas e repsostas, como se fosse responder um e-mail com essas informações.
 
