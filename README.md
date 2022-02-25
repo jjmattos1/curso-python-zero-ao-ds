@@ -1,10 +1,17 @@
 Repo com os meus códigos e comentários desse dado curso do Meigarom (Seja um Datascientist).
 
+Softwares utilizados até o momento:
+	
+	- PyCharm com Python "3.8.0" no Ubuntu "20.04 LTS".
+	- Notes/kwrite do Linux para editar as notas.
+	- PyDroid3 com Python "3.9.7" no Android 12 sendo usado tanto como interpreter e editor de notas.
+
 Bibliotecas instaladas até então:
 
 - pandas
 - numpy
 
-Observação:
+Deixo aqui o meu MUITO OBRIGADO ao Meigarom pela força e material sensacional, altamente prático, para quem quer entender mais do mundo de ciência de dados.
 
-Virtual env do Python não colocado neste repo. Estou usando o Python 3.8 no Ubuntu Linux 20.04 LTS (PyCharm). Recentemente estou utilizando também o PyDroid no Android 12 para ir estudando "on the go".
+[]'s,
+Jjmattos1.
