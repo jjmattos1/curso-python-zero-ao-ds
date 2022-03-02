@@ -70,7 +70,7 @@ import pandas as pd
 # Selecionar dados, forma 01: Direto pelo nome das colunas
 # ===================================
 
-data = pd.read_csv('datasets/kc_house_data.csv')
+#data = pd.read_csv('datasets/kc_house_data.csv')
 #print(data[['price','id','date']])
 
 # ===================================
@@ -98,5 +98,22 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 # 1, 0
 # True, False
 
-cols = ['price','id','date']
-print(data.loc[0:10,cols])
+#cols = [True, False, True, True, False, False,False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+
+#print(data.loc[0:10,cols])
+
+#print(data.columns)
+
+# ===================================
+# Respondendo as perguntas de negócio
+# ===================================
+
+data = pd.read_csv('datasets/kc_house_data.csv')
+
+# 1. Qual a data do imóvel mais antigo do portfólio?
+
+# data['date'] = pd.to_datetime(data['date'])
+# print(data.sort_values('date', ascending=True))
+
+# 2. Quantos imóveis possuem o numero máximo de andares?
+

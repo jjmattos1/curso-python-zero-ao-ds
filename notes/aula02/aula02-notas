@@ -106,6 +106,37 @@ Agenda:
 			- Forma 2: Pelos índices das colunas.
 			- Forma 3: Pelos índices das colunas e pelos nomes das colunas.
 			- Forma 4: Pelos índices booleanos. (True e False)
+			
+- Executando o Processo Planejado:
+	
+	1. Qual a data do imóvel mais antigo do portfólio?
+	
+	- Ordenar conjunto de dados pela menor data.
+	
+	2. Quantos imóveis possuem o numero máximo de andares?
+	
+	- Encontrar os números de andares e encontrar o maior.
+	- Contar quantos imóveis tenho por andar.
+	
+	3. Criar uma classificação para os imóveis, separando-os em baixo e alto padrão, de acordo com o preço.
+	Acima de 540.000 -> Alto Padrão
+	Abaixo de 540.000 -> Baixo Padrão
+	
+	- Criar uma nova coluna no conjunto de dados chamada "standard"
+		- Para cada linha, eu vou comparar com a coluna "price"
+			- Se "price" for maior que 540.000, eu vou escrever "high_standard" na coluna "standard"
+			- Se "price" for menor que 540.000, eu vou escrever "low_standard" na coluna "standard"
+		
+	4. Gostaria de um relatório ordenado pelo preço e contendo as seguintes informações:
+   ( id do imóvel, data em que ficou disponível para compra, o numero de quartos, o tamanho total do terreno, o preço e a classificação do imóvel ( alto e baixo padrão ) ).
+   
+	- Selecionar as colunas desejadas
+	- Deletar as colunas não desejadas
+	
+   5. Gostaria de um mapa indicando onde as casas estão localizadas geograficamente.
+   
+   - Procurar uma biblioteca em Python que armazena uma função que desenha mapa.
+   - Aprender a função que desenha mapas.
 	
 5. Exercícios Práticos
 	5.1.
