@@ -10,8 +10,9 @@ Bibliotecas instaladas até então:
 
 - pandas
 - numpy
+- Plotly
 
 Deixo aqui o meu MUITO OBRIGADO ao Meigarom pela força e material sensacional, altamente prático, para quem quer entender mais do mundo de ciência de dados.
 
 []'s,
-Jjmattos1.
+jjmattos1.
