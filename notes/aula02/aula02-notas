@@ -166,6 +166,28 @@ Agenda:
 	
 	9. Qual a data de renovação mais antiga de um imóvel?
 	
-	10. 
+	10. Quantos imóveis tem um 2 andares?
 	
+	11. Quantos imóveis estão com a condição igual a "regular"?
 	
+	12. Quantos imóveis estão com a condição igual a "bad" e possuem "vista para a agua"?
+	
+	13. Quantos imóveis estão com a condição igual a "good" e são "new house"?
+	
+	14. Qual imóvel mais caro do tipo "studio"?
+	
+	15. Quantos imóveis do tipo "apartment" foram reformados em 2015?
+	
+	16. Qual maior número de quartos que um imóvel do tipo "house" possui?
+	
+	17. Quantos imóveis "new house" foram reformados em 2014?
+	
+	18. Selecione as colunas: "id", "date", "price", "floors", "zipcode" pelos métodos:
+		18.1. Direto pelo nome das colunas
+		18.2. Pelos índices
+		18.3. Pelos índices das linhas e os nomes das colunas
+		18.4. Pelos índices booleanos
+
+	19. Salve um arquivo ".csv" somente com as colunas do item 10
+	
+	20. Modifique a cor dos pontos no mapa de "pink" para "verde-escuro"
