@@ -112,8 +112,8 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 
 # 1. Qual a data do imóvel mais antigo do portfólio?
 
-#data['date'] = pd.to_datetime(data['date'])
-#print(data.sort_values('date', ascending=True))
+data['date'] = pd.to_datetime(data['date'])
+print(data.sort_values('date', ascending=True))
 
 # 2. Quantos imóveis possuem o numero máximo de andares?
 
@@ -132,10 +132,15 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 # 4. Gostaria de um relatório ordenado pelo preço e contendo as seguintes informações:
 #    ( id do imóvel, data em que ficou disponível para compra, o numero de quartos, o tamanho total do terreno, o preço e a classificação do imóvel ( alto e baixo padrão ) ).
 
+
 #report = data[['id', 'date', 'price', 'bedrooms', 'sqft_lot', 'level']].sort_values('price', ascending=False)
+
+#print(data.columns)
+
 #print(report.head())
 
-# Não se pode esquecer de usar o parâmetro ", index=False", pois se não ele vai exportar com os index's originais e na hora de fazer a leitura desse CSV os dados ficarão totalmente embaralhados
+ #Não se pode esquecer de usar o parâmetro ", index=False", pois se não ele vai exportar com os index's originais e na hora de fazer a leitura desse CSV os dados ficarão totalmente embaralhados
+
 #report.to_csv('datasets/report_aula02.csv', index=False)
 
 # 5. Gostaria de um mapa indicando onde as casas estão localizadas geograficamente.
@@ -143,15 +148,15 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 #Para instalar, via terminal: pip install plotly
 # Scatter MapBox - Funcao que desenha mapa
 
-import plotly.express as px
+#import plotly.express as px
 
-data_mapa = data[['id', 'lat', 'long', 'price']]
+#data_mapa = data[['id', 'lat', 'long', 'price']]
 
-mapa = px.scatter_mapbox (data_mapa, lat= 'lat', lon = 'long', hover_name='id', hover_data=['price'], color_discrete_sequence=['fuchsia'], zoom=3, height=300)
+#mapa = px.scatter_mapbox (data_mapa, lat= 'lat', lon = 'long', hover_name='id', hover_data=['price'], color_discrete_sequence=['fuchsia'], zoom=3, height=300)
 
-mapa.update_layout( mapbox_style='open-street-map')
-mapa.update_layout(height=600, margin={'r':0, 't':0, 'l':0, 'b':0})
-mapa.show()
+#mapa.update_layout( mapbox_style='open-street-map')
+#mapa.update_layout(height=600, margin={'r':0, 't':0, 'l':0, 'b':0})
+#mapa.show()
 
 #mapa.write_html('datasets/mapa_house_rocket.html')
 #testar arquivo gerado em HTML com mais calma, pois o atual não está abrindo nos navegadores Android.
