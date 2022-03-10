@@ -112,8 +112,8 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 
 # 1. Qual a data do imóvel mais antigo do portfólio?
 
-data['date'] = pd.to_datetime(data['date'])
-print(data.sort_values('date', ascending=True))
+#data['date'] = pd.to_datetime(data['date'])
+#print(data.sort_values('date', ascending=True))
 
 # 2. Quantos imóveis possuem o numero máximo de andares?
 
@@ -163,3 +163,31 @@ print(data.sort_values('date', ascending=True))
 
 # linha apenas para testar DF
 #print(data.head())
+
+# ===================================
+# Exercícios Práticos abaixo
+# ===================================
+
+#
+#	1. Crie uma nova coluna chamada: "house_age".
+#		- Se o valor da coluna date for maior que 2014-01-01 => "new_house"
+#		- Se o valor da coluna date for menor que 2014-01-01 => "old_house"
+#
+
+#print(data.dtypes)
+
+#print(data['date'].head())
+
+data['date'] = pd.to_datetime(data['date'])
+
+print(data['date'].head())
+
+#data['date'] = pd.to_datetime(data['date'])
+#print(data.sort_values('date', ascending=True))
+
+#(df['Set'] == 'Z') & (df['Type'] == 'A'),
+#    (df['Set'] == 'Z') & (df['Type'] == 'B'),
+#    (df['Type'] == 'B')]
+#choices = ['yellow', 'blue', 'purple']
+#df['color'] = np.select(conditions, choices, default='black')
+#print(df)
