@@ -168,26 +168,56 @@ data = pd.read_csv('datasets/kc_house_data.csv')
 # Exercícios Práticos abaixo
 # ===================================
 
-#
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 #	1. Crie uma nova coluna chamada: "house_age".
 #		- Se o valor da coluna date for maior que 2014-01-01 => "new_house"
 #		- Se o valor da coluna date for menor que 2014-01-01 => "old_house"
-#
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
 #print(data.dtypes)
 
 #print(data['date'].head())
 
-data['date'] = pd.to_datetime(data['date'])
+import numpy as np
 
-print(data['date'].head())
+data['date'] = pd.to_datetime(data['date'])
 
 #data['date'] = pd.to_datetime(data['date'])
 #print(data.sort_values('date', ascending=True))
 
-#(df['Set'] == 'Z') & (df['Type'] == 'A'),
+#print(data['date'].head())
+
+#conditions = [
+#    (df['Set'] == 'Z') & (df['Type'] == 'A'),
 #    (df['Set'] == 'Z') & (df['Type'] == 'B'),
 #    (df['Type'] == 'B')]
 #choices = ['yellow', 'blue', 'purple']
 #df['color'] = np.select(conditions, choices, default='black')
 #print(df)
+
+CondsQ1 = [ (data['date'] > '2014-01-01'), (data['date'] < '2014-01-01') ]
+
+SelsQ1 = ['new_house', 'old_house']
+
+data['house_age'] = np.select(CondsQ1,SelsQ1)
+
+#print(data.head())
+
+#print(data[data['house_age'] == 'new_house'].shape)
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 1 finalizado
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+#2. Crie uma nova coluna chamada: "dormitory_type"
+#		- Se o valor da coluna "bedrooms" for igual a 1 => "studio"
+#		- Se o valor da coluna "bedrooms" for igual a 2 => "apartament"
+#		- Se o valor da coluna "bedrooms" for maior que 2 => "house"
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+CondsQ2 = 
+
+SelsQ2 = 
+
+
