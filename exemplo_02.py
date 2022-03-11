@@ -194,15 +194,15 @@ data['date'] = pd.to_datetime(data['date'])
 #choices = ['yellow', 'blue', 'purple']
 #df['color'] = np.select(conditions, choices, default='black')
 #print(df)
+###
+#CondsQ1 = [ (data['date'] > '2014-01-01'), (data['date'] < '2014-01-01') ]
 
-CondsQ1 = [ (data['date'] > '2014-01-01'), (data['date'] < '2014-01-01') ]
+#SelsQ1 = ['new_house', 'old_house']
 
-SelsQ1 = ['new_house', 'old_house']
-
-data['house_age'] = np.select(CondsQ1,SelsQ1)
+#data['house_age'] = np.select(CondsQ1,SelsQ1)
 
 #print(data.head())
-
+###
 #print(data[data['house_age'] == 'new_house'].shape)
 
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
@@ -216,8 +216,28 @@ data['house_age'] = np.select(CondsQ1,SelsQ1)
 #		- Se o valor da coluna "bedrooms" for maior que 2 => "house"
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
-CondsQ2 = 
+CondsQ2 = [(data['bedrooms'] == 1), (data['bedrooms'] == 2), (data['bedrooms'] > 2)]
 
-SelsQ2 = 
+SelsQ2 = ['studio', 'apartment', 'house']
 
+data['dormitory_type'] = np.select (CondsQ2, SelsQ2)
+
+print(data.head())
+
+print(data[data['dormitory_type'] == 'house'].shape)
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 2 finalizado
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# 3. Criar uma classificação para os imóveis, separando-os em baixo e alto padrão, de acordo com o preço.
+	#Acima de 540.000 -> Alto Padrão
+#	Abaixo de 540.000 -> Baixo Padrão
+#	
+#	- Criar uma nova coluna no conjunto de dados chamada "standard"
+#		- Para cada linha, eu vou comparar com a coluna "price"
+#			- Se "price" for maior que 540.000, eu vou escrever "high_standard" na coluna "standard"
+#			- Se "price" for menor que 540.000, eu vou escrever "low_standard" na coluna "standard"
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
