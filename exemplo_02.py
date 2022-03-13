@@ -216,15 +216,15 @@ data['date'] = pd.to_datetime(data['date'])
 #		- Se o valor da coluna "bedrooms" for maior que 2 => "house"
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
-CondsQ2 = [(data['bedrooms'] == 1), (data['bedrooms'] == 2), (data['bedrooms'] > 2)]
+#CondsQ2 = [(data['bedrooms'] == 1), (data['bedrooms'] == 2), (data['bedrooms'] > 2)]
 
-SelsQ2 = ['studio', 'apartment', 'house']
+#SelsQ2 = ['studio', 'apartment', 'house']
 
-data['dormitory_type'] = np.select (CondsQ2, SelsQ2)
+#data['dormitory_type'] = np.select (CondsQ2, SelsQ2)
 
-print(data.head())
+#print(data.head())
 
-print(data[data['dormitory_type'] == 'house'].shape)
+#print(data[data['dormitory_type'] == 'house'].shape)
 
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 # Exercício 2 finalizado
@@ -239,5 +239,29 @@ print(data[data['dormitory_type'] == 'house'].shape)
 #		- Para cada linha, eu vou comparar com a coluna "price"
 #			- Se "price" for maior que 540.000, eu vou escrever "high_standard" na coluna "standard"
 #			- Se "price" for menor que 540.000, eu vou escrever "low_standard" na coluna "standard"
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#print(data.dtypes)
+#print(data['price'].head())
+
+CondsQ3 = [(data['price'] > 540000), (data['price'] < 540000)]
+
+SelsQ3 = ['high_standard', 'low_standard']
+
+data['standard'] = np.select(CondsQ3, SelsQ3)
+
+#print(data.head())
+
+#print('\n\n\nLow Standard: ',data[data['standard'] == 'low_standard'].shape)
+
+print(data[['id','price','standard']].head())
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 3 finalizado
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+#4. Gostaria de um relatório ordenado pelo preço e contendo as seguintes informações:
+#	  ( id do imóvel, data em que ficou disponível para compra, o numero de quartos, o tamanho total do terreno, o preço e a classificação do imóvel ( alto e baixo padrão ) ).
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
