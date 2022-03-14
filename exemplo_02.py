@@ -241,7 +241,7 @@ print(data[data['dormitory_type'] == 'house'].shape)
 #			- Se "price" for menor que 540.000, eu vou escrever "low_standard" na coluna "standard"
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
-<<<<<<< HEAD
+#<<<<<<< HEAD < colocado pelado git quando removi o commit "Fazendo Q4."
 #print(data.dtypes)
 #print(data['price'].head())
 
@@ -270,12 +270,13 @@ data['standard'] = np.select(CondsQ3, SelsQ3)
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
 
-
-
-
 data['condition_type'] = 'condition'
 
 data.loc[data['condition'] <= 2, 'condition_type'] = 'bad'
+data.loc[data['condition'] == 3 or == 4, 'condition_type'] = 'regular'
+data.loc[data['condition'] == 5, 'condition_type'] = 'good
+
+print(data['id','condition','condition_type']head())
 
 #cols = ['price','id','date']
 #print(data.loc[0:10,cols])
