@@ -254,14 +254,40 @@ data['standard'] = np.select(CondsQ3, SelsQ3)
 
 #print('\n\n\nLow Standard: ',data[data['standard'] == 'low_standard'].shape)
 
-print(data[['id','price','standard']].head())
+#print(data[['id','price','standard']].head())
 
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
-# Exercício 3 finalizado
+# Exercício 3 repetido finalizado, logo abaixo o exercício 3 correto.
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
-#4. Gostaria de um relatório ordenado pelo preço e contendo as seguintes informações:
-#	  ( id do imóvel, data em que ficou disponível para compra, o numero de quartos, o tamanho total do terreno, o preço e a classificação do imóvel ( alto e baixo padrão ) ).
+#3. Crie uma nova coluna chamada: "condition_type"
+#		- Se o valor da coluna "condition" for menor ou igual a 2 => "bad"
+#		- Se o valor da coluna "condition" for igual a 3 ou 4 => "regular"
+#		- Se o valor da coluna "condition" for igual a 5 => "good"
+
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+
+
+
+
+data['condition_type'] = 'condition'
+
+data.loc[data['condition'] <= 2, 'condition_type'] = 'bad'
+
+#cols = ['price','id','date']
+#print(data.loc[0:10,cols])
+
+#data['level'] = 'standard'
+
+#data.loc[data['price'] > 540000, 'level'] = 'high_level'
+
+#
+#print(data.columns)
+
+#id', 'date', 'price', 'bedrooms', 'bathrooms', 'sqft_living',
+#       'sqft_lot', 'floors', 'waterfront', 'view', 'condition', 'grade',
+#       'sqft_above', 'sqft_basement', 'yr_built', 'yr_renovated', 'zipcode',
+#       'lat', 'long', 'sqft_living15', 'sqft_lot15', 'standard'
 
