@@ -216,15 +216,15 @@ data['date'] = pd.to_datetime(data['date'])
 #		- Se o valor da coluna "bedrooms" for maior que 2 => "house"
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
-#CondsQ2 = [(data['bedrooms'] == 1), (data['bedrooms'] == 2), (data['bedrooms'] > 2)]
+CondsQ2 = [(data['bedrooms'] == 1), (data['bedrooms'] == 2), (data['bedrooms'] > 2)]
 
-#SelsQ2 = ['studio', 'apartment', 'house']
+SelsQ2 = ['studio', 'apartment', 'house']
 
-#data['dormitory_type'] = np.select (CondsQ2, SelsQ2)
+data['dormitory_type'] = np.select (CondsQ2, SelsQ2)
 
-#print(data.head())
+print(data.head())
 
-#print(data[data['dormitory_type'] == 'house'].shape)
+print(data[data['dormitory_type'] == 'house'].shape)
 
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 # Exercício 2 finalizado
@@ -241,6 +241,7 @@ data['date'] = pd.to_datetime(data['date'])
 #			- Se "price" for menor que 540.000, eu vou escrever "low_standard" na coluna "standard"
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
+<<<<<<< HEAD
 #print(data.dtypes)
 #print(data['price'].head())
 
@@ -291,3 +292,5 @@ data.loc[data['condition'] <= 2, 'condition_type'] = 'bad'
 #       'sqft_above', 'sqft_basement', 'yr_built', 'yr_renovated', 'zipcode',
 #       'lat', 'long', 'sqft_living15', 'sqft_lot15', 'standard'
 
+=======
+>>>>>>> parent of 76f1d75 (Finalizando Q4.)
