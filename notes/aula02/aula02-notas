@@ -158,7 +158,7 @@ Agenda:
 
 	5. Delete as colunas "sqft_living15" e "sqft_lot15"
 	
-	6. Modifique o tipo da coluna "yr_build" para date
+	6. Modifique o tipo da coluna "yr_built" para date
 	
 	7. Modifique o tipo da coluna "yr_renovated" para date
 

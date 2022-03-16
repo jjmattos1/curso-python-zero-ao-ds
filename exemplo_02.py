@@ -222,9 +222,9 @@ SelsQ2 = ['studio', 'apartment', 'house']
 
 data['dormitory_type'] = np.select (CondsQ2, SelsQ2)
 
-print(data.head())
+#print(data.head())
 
-print(data[data['dormitory_type'] == 'house'].shape)
+#print(data[data['dormitory_type'] == 'house'].shape)
 
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 # Exercício 2 finalizado
@@ -244,7 +244,7 @@ print(data[data['dormitory_type'] == 'house'].shape)
 #<<<<<<< HEAD < colocado pelado git quando removi o commit "Fazendo Q4."
 #print(data.dtypes)
 #print(data['price'].head())
-
+###
 CondsQ3 = [(data['price'] > 540000), (data['price'] < 540000)]
 
 SelsQ3 = ['high_standard', 'low_standard']
@@ -252,9 +252,7 @@ SelsQ3 = ['high_standard', 'low_standard']
 data['standard'] = np.select(CondsQ3, SelsQ3)
 
 #print(data.head())
-
-#print('\n\n\nLow Standard: ',data[data['standard'] == 'low_standard'].shape)
-
+###
 #print(data[['id','price','standard']].head())
 
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
@@ -269,14 +267,17 @@ data['standard'] = np.select(CondsQ3, SelsQ3)
 
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
-
+###
 data['condition_type'] = 'condition'
 
 data.loc[data['condition'] <= 2, 'condition_type'] = 'bad'
-data.loc[data['condition'] == 3 or == 4, 'condition_type'] = 'regular'
-data.loc[data['condition'] == 5, 'condition_type'] = 'good
+data.loc[((data['condition'] == 3) | (data['condition'] == 4)), 'condition_type'] = 'regular'
+data.loc[data['condition'] == 5, 'condition_type'] = 'good'
+###
 
-print(data['id','condition','condition_type']head())
+#ColsQ3 = ['id','condition','condition_type']
+
+#print(data.loc[0:20,ColsQ3])
 
 #cols = ['price','id','date']
 #print(data.loc[0:10,cols])
@@ -293,5 +294,96 @@ print(data['id','condition','condition_type']head())
 #       'sqft_above', 'sqft_basement', 'yr_built', 'yr_renovated', 'zipcode',
 #       'lat', 'long', 'sqft_living15', 'sqft_lot15', 'standard'
 
-=======
->>>>>>> parent of 76f1d75 (Finalizando Q4.)
+#=======
+#>>>>>>> parent of 76f1d75 (Finalizando Q4.)
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 3 finalizado acima
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 4 abaixo
+# 4. Modifique o tipo da coluna "condition" para STRING
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#print(data.dtypes)
+# atualmente a coluna 'condition' e Int64. Farei a conversão abaixo para ficar apenas temporariamente em memória
+
+data['condition'] = data['condition'].astype(str)
+
+#print(data.dtypes)
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 4 finalizado acima
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 5 abaixo
+#5. Delete as colunas "sqft_living15" e "sqft_lot15"
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+ColsQ5 = ['sqft_living15', 'sqft_lot15']
+
+data = data.drop(ColsQ5, axis=1)
+
+#print(data.columns)
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 5 finalizado acima
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 6 abaixo
+#  6. Modifique o tipo da coluna "yr_built" para date
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#print(data.dtypes)
+
+DataView = data[['id', 'yr_built']]
+print(DataView.head())
+
+#data['yr_built'] = pd.to_datetime(data['yr_built'], infer_datetime_format=True)
+
+data['yr_built'] = (data['yr_built'].astype(str))
+
+# falta testar converter agora para datetime novamente
+
+DataView = data[['id', 'yr_built']]
+print(DataView.head())
+
+#print(data.dtypes)
+
+# apesar da função abaixo deixar o valor apenas do ano conforme eu queria, tem 2 erros. 1o que o tipo da coluna volta a ser Int64, 2o que os valores ficaram errados, todos ficaram 1970.
+#data['yr_built'] = data['yr_built'].dt.year
+
+# , format='%Y'
+# , infer_datetime_format=True
+
+# em futuras aplicações, seguir guidelines desse link a seguir 'https://stackoverflow.com/questions/26763344/convert-pandas-column-to-datetime', pois só de você especificar o formato no qual você quer que fique os dados após a conversão, você aumenta o desempenho dessa conversão em 5x (usando o parâmetro 'infer_datetime_format=True' já se tem esse ganho de acordo com a documentação oficial do pandas.
+
+#print(data.dtypes)
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 6 finalizado acima
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 7 abaixo
+# 7. Modifique o tipo da coluna "yr_renovated" para date
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#print(data.dtypes)
+data['yr_renovated'] = pd.to_datetime(data['yr_renovated'])
+#print(data.dtypes)
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 7 finalizado acima
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 8 abaixo
+# 8. Qual a data de construção mais antiga de um imóvel?
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#DataQ7 = data[['id', 'yr_built']]
+#print(DataQ7.sort_values('yr_built', ascending=True))
