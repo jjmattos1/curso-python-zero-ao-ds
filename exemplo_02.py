@@ -339,13 +339,30 @@ data = data.drop(ColsQ5, axis=1)
 
 #print(data.dtypes)
 
-DataView = data[['id', 'yr_built']]
-print(DataView.loc[0:10,])
+#q6 solution below
+#print('Original data:\n')
+#print(data['yr_built'].loc[0:10,])
 
-#data['yr_built'] = pd.to_datetime(data['yr_built'], infer_datetime_format=True)
+#data['yr_built'] = (data['yr_built'].astype(str))
+#print(data['yr_built'].loc[0:10,])
 
-data['yr_built'] = (data['yr_built'].astype(str))
+#print('\nNew date format as str:\n')
+data['yr_built'] = ('01/01/' + data['yr_built'].map(str))
+#print(data['yr_built'].loc[0:10,])
+
+#print('\nAbove format converted to datetime:')
 data['yr_built'] = pd.to_datetime(data['yr_built'], infer_datetime_format=True)
+#print(data['yr_built'].loc[0:10,])
+#q6 solution above
+
+
+
+#print(data.dtypes)
+
+#print('\nDatetime > str > Datetime:')
+#data['yr_built'] = (data['yr_built'].astype(str))
+#data['yr_built'] = pd.to_datetime(data['yr_built'], infer_datetime_format=True)
+#print(data['yr_built'].loc[0:10,])
 
 # falta testar converter agora para datetime novamente
 
@@ -458,5 +475,5 @@ data['yr_renovated'] = pd.to_datetime(data['yr_renovated'])
 # 8. Qual a data de construção mais antiga de um imóvel?
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
-#DataQ7 = data[['id', 'yr_built']]
-#print(DataQ7.sort_values('yr_built', ascending=True))
+DataQ7 = data[['id', 'yr_built']]
+print(DataQ7.sort_values('yr_built', ascending=True).loc(0:100,DataQ))
