@@ -340,16 +340,17 @@ data = data.drop(ColsQ5, axis=1)
 #print(data.dtypes)
 
 DataView = data[['id', 'yr_built']]
-print(DataView.head())
+print(DataView.loc[0:10,])
 
 #data['yr_built'] = pd.to_datetime(data['yr_built'], infer_datetime_format=True)
 
 data['yr_built'] = (data['yr_built'].astype(str))
+data['yr_built'] = pd.to_datetime(data['yr_built'], infer_datetime_format=True)
 
 # falta testar converter agora para datetime novamente
 
-DataView = data[['id', 'yr_built']]
-print(DataView.head())
+#DataView = data[['id', 'yr_built']]
+#print(DataView.loc[0:10,])
 
 #print(data.dtypes)
 
@@ -373,8 +374,80 @@ print(DataView.head())
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
 #print(data.dtypes)
-data['yr_renovated'] = pd.to_datetime(data['yr_renovated'])
+#print('\n')
+#ColsQ7 = ['id','yr_renovated']
+
+#print('\n')
+
+#import datetime as dt
+
+#data['yr_renovated'] = (data['yr_renovated'].astype(str))
+
+#print(data['yr_renovated'].dtypes)
+#print(data.loc[0:30,ColsQ7])
+
 #print(data.dtypes)
+
+#pd.to_datetime(data['yr_renovated'], format='%Y%m%d', errors='ignore')
+
+#print(data['yr_renovated'])
+
+#print(data.dtypes)
+
+
+#print((data['yr_renovated'].unique) != 0)
+
+#Q7Sel = pd.to_datetime('2010-01-01')
+#data['yr_']
+
+
+#q7 solution below
+#print('Current, as str:')
+data['yr_renovated'] = data['yr_renovated'].astype(str)
+
+#print(data['yr_renovated'].head())
+
+data['yr_renovated'] = (data['yr_renovated'].replace('0',np.nan))
+
+data['yr_renovated'] = pd.to_datetime(data['yr_renovated'])
+
+#print(data['yr_renovated'].head())
+
+#print(data.dtypes)
+#q7 solution up
+
+#print('\n')
+#print('Current after conversion plus new datetime value added:')
+#data['yr_renovated'] = (data.loc[1,'yr_renovated'] + '0101')
+#print(data.loc[1,'yr_renovated'])
+#print('\n')
+#print('Current converted as datetime format:')
+#print(pd.to_datetime(data.loc[1,'yr_renovated']))
+
+
+
+#for index in data.index:
+#	if data.loc[index,'yr_renovated']
+
+#for index in df.index:   if df.loc[index,'Name']=='Mr. Elon R. Musk':   df.loc[index,'Title'] = 'The Boss Man'  
+#elif df.loc[index,'Name']=='Mr. Zachary J. Kirkhorn':   df.loc[index,'Title'] = 'The Money Man'  
+#else:   df.loc[index,'Title'] = 'Another Dude'
+
+
+#data['yr_renovated'] = pd.to_datetime(data['yr_renovated'])
+
+
+#, format='%Y%m%d', errors='coerce'
+#print('\n')
+#print(pd.DatetimeIndex(data['yr_renovated']).year)
+
+#data['yr_renovated'] = pd.to_datetime(data['yr_renovated'].astype(str), format='%Y%m%d')
+
+#print(data.dtypes)
+#print('\n')
+#print(data.loc[0:30,ColsQ7])
+
+#day is out of range for month
 
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 # Exercício 7 finalizado acima
