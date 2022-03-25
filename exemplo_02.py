@@ -475,5 +475,57 @@ data['yr_renovated'] = pd.to_datetime(data['yr_renovated'])
 # 8. Qual a data de construção mais antiga de um imóvel?
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
-DataQ7 = data[['id', 'yr_built']]
-print(DataQ7.sort_values('yr_built', ascending=True).loc(0:100,DataQ))
+#q8 solution down
+#DataQ7 = data[['id', 'yr_built']]
+#print((DataQ7.sort_values('yr_built', ascending=True)))
+#q8 solution up
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 9 abaixo
+# 9. Qual a data de renovação mais antiga de um imóvel?
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#q9 solution down
+#DataQ8 = data[['id', 'yr_renovated']]
+#print((DataQ8.sort_values('yr_renovated', ascending=True)))
+#q9 solution up
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 10 abaixo
+# 10. Quantos imóveis tem 2 andares?
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#q10 solution down
+#DataQ10 = data[['id', 'floors']]
+#SelQ10 = (DataQ10['floors'] == 2.0)
+
+#print((data[SelQ10]).shape)
+#q10 solution up
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 11 abaixo
+# 11. Quantos imóveis estão com a condição igual a "regular"?
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+
+#print((data.loc[:,'condition_type'] == 'regular'))
+#print(data['condition_type'].count('regular'))
+
+#collections2 as colls2
+#from collections2 import Counter
+
+#q11 solution down
+#Q11Sel = (data.loc[:,'condition_type'] == 'regular')
+#Q11Selected = data[Q11Sel]
+
+#print(Q11Selected.shape)
+#q11 solution up
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 12 abaixo
+# 12. Quantos imóveis estão com a condição igual a "bad" e possuem "vista para a agua"?
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#Q12Sel = ((data.loc[:,'condition_type'] == 'bad')) & (data.loc[:,'waterfront'] =='x')
+
+print((data['waterfront']))
