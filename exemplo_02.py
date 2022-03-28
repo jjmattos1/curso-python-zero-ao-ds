@@ -195,11 +195,11 @@ data['date'] = pd.to_datetime(data['date'])
 #df['color'] = np.select(conditions, choices, default='black')
 #print(df)
 ###
-#CondsQ1 = [ (data['date'] > '2014-01-01'), (data['date'] < '2014-01-01') ]
+CondsQ1 = [ (data['date'] > '2014-01-01'), (data['date'] < '2014-01-01') ]
 
-#SelsQ1 = ['new_house', 'old_house']
+SelsQ1 = ['new_house', 'old_house']
 
-#data['house_age'] = np.select(CondsQ1,SelsQ1)
+data['house_age'] = np.select(CondsQ1,SelsQ1)
 
 #print(data.head())
 ###
@@ -526,6 +526,40 @@ data['yr_renovated'] = pd.to_datetime(data['yr_renovated'])
 # 12. Quantos imóveis estão com a condição igual a "bad" e possuem "vista para a agua"?
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
-#Q12Sel = ((data.loc[:,'condition_type'] == 'bad')) & (data.loc[:,'waterfront'] =='x')
+#Q12Sel = ((data.loc[:,'condition_type'] == 'bad')) & (data.loc[:,'waterfront'] =='1')
 
-print((data['waterfront']))
+#print(Q12Sel)
+
+#Q12wct = ((data['waterfront'] == 1) & (data['condition_type'] == 'bad'))
+#Q12wOk = data[Q12wct]
+
+#print(Q12wOk.shape)
+#q12 solution up
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 13 abaixo
+# 13. Quantos imóveis estão com a condição igual a "good" e são "new house"?
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#melhorar solucao dessa questao, usando a logica da linha abaixo:
+	#print(data[data['floors'] == 3.5].shape)
+	
+Q13sel = ((data['condition_type'] == 'good') & (data['house_age'] == 'new_house'))
+#Q13sel2 = (data['condition_type'] == 'good')
+
+Q13 = data[Q13sel]
+
+#print(Q13['condition_type'].shape)
+#q13 solution up
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 14 abaixo
+# 14. Qual imóvel mais caro do tipo "studio"?
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#print(data[data['floors'] == 3.5].shape)
+
+Q14sel = (data['dormitory_type'] == 'studio')
+Q14 = data[Q14sel]
+
+#print(Q14[['id','dormitory_type','price']].sort_values('price',ascending=False))
