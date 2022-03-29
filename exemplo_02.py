@@ -563,3 +563,26 @@ Q14sel = (data['dormitory_type'] == 'studio')
 Q14 = data[Q14sel]
 
 #print(Q14[['id','dormitory_type','price']].sort_values('price',ascending=False))
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 15 abaixo
+# Quantos imóveis do tipo "apartment" foram reformados em 2015?
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+#print(data.dtypes)
+
+#(data['dormitory_type'] == 'apartment')
+# yr_renovated
+
+#print(data['yr_renovated'])
+
+id1 = (data.loc[:,'dormitory_type'])
+id2 = (data['yr_renovated'] == '2015-01-01')
+
+#print(data[data['floors'] == 3.5].shape)
+
+#cols = ['price','id','date']
+#print(data.loc[0:10,cols])
+
+Q15cols = ['id',id1,id2]
+print(data.loc[0:10,Q15cols])
