@@ -417,6 +417,10 @@ data['yr_built'] = pd.to_datetime(data['yr_built'], infer_datetime_format=True)
 #Q7Sel = pd.to_datetime('2010-01-01')
 #data['yr_']
 
+#print(data['yr_renovated'].unique)
+#print('Before the data manipulation:\n')
+#print(np.unique(data['yr_renovated']))
+
 
 #q7 solution below
 #print('Current, as str:')
@@ -427,6 +431,9 @@ data['yr_renovated'] = data['yr_renovated'].astype(str)
 data['yr_renovated'] = (data['yr_renovated'].replace('0',np.nan))
 
 data['yr_renovated'] = pd.to_datetime(data['yr_renovated'])
+
+#print('\nAfter the data manipulation:\n')
+#print(np.unique(data['yr_renovated']))
 
 #print(data['yr_renovated'].head())
 
@@ -576,13 +583,51 @@ Q14 = data[Q14sel]
 
 #print(data['yr_renovated'])
 
-id1 = (data.loc[:,'dormitory_type'])
-id2 = (data['yr_renovated'] == '2015-01-01')
+#q15 solution down
+Q15_id1 = (data[data['dormitory_type'] == 'apartment'])
+#Q15_id2 = (data[data['yr_renovated'] == '2015-01-01'])
+Q15_id3 = (Q15_id1[Q15_id1['yr_renovated'] == '2015-01-01T00:00:00.000000000'])
 
 #print(data[data['floors'] == 3.5].shape)
 
 #cols = ['price','id','date']
 #print(data.loc[0:10,cols])
 
-Q15cols = ['id',id1,id2]
-print(data.loc[0:10,Q15cols])
+#Q15cols = ['id',id1,id2]
+#print(data.loc[0:10,Q15cols])
+#print(Q15_id1['dormitory_type'],'\n')
+
+#print(Q15_id2['yr_renovated'],'\n')
+
+print(Q15_id3)
+#q15 solution up
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 16 abaixo
+# Qual maior número de quartos que um imóvel do tipo "house" possui?
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+Q16 = data[data['dormitory_type'] == 'house']
+
+#print(Q16[['dormitory_type','bedrooms']].sort_values('bedrooms',ascending=False))
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 17 abaixo
+# Quantos imóveis "new house" foram reformados em 2014?
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+Q17age = data[data['house_age'] == 'new_house']
+
+#print('\nQ17 yr_renovated uniques:\n')
+#print(np.unique(Q17age['yr_renovated']))
+
+Q17 = Q17age[Q17age['yr_renovated'] == '2014-01-01T00:00:00.000000000']
+
+#print(Q17[['id','house_age','yr_renovated']])
+
+print(Q17.shape)
+
+#print(data[['id','house_age','yr_renovated']])
+
+
+
