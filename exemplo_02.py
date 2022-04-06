@@ -584,11 +584,20 @@ Q14 = data[Q14sel]
 #print(data['yr_renovated'])
 
 #q15 solution down
-Q15_id1 = (data[data['dormitory_type'] == 'apartment'])
+#Q15_id1 = (data[data['dormitory_type'] == 'apartment'])
 #Q15_id2 = (data[data['yr_renovated'] == '2015-01-01'])
-Q15_id3 = (Q15_id1[Q15_id1['yr_renovated'] == '2015-01-01T00:00:00.000000000'])
+#Q15_id3 = (Q15_id1[Q15_id1['yr_renovated'] == '2015-01-01T00:00:00.000000000'])
+#print(Q15_id3)
+#q15 solution up
 
+#extra
 #print(data[data['floors'] == 3.5].shape)
+
+# teste de validacao down
+#q15test = data[['id','dormitory_type','yr_renovated']]
+#print('Q15 validando reformados em 2015:\n')
+#print(q15test[q15test['yr_renovated'] == '2015-01-01T00:00:00.000000000'])
+# teste de validacao up
 
 #cols = ['price','id','date']
 #print(data.loc[0:10,cols])
@@ -599,8 +608,6 @@ Q15_id3 = (Q15_id1[Q15_id1['yr_renovated'] == '2015-01-01T00:00:00.000000000'])
 
 #print(Q15_id2['yr_renovated'],'\n')
 
-print(Q15_id3)
-#q15 solution up
 
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 # Exercício 16 abaixo
@@ -625,9 +632,75 @@ Q17 = Q17age[Q17age['yr_renovated'] == '2014-01-01T00:00:00.000000000']
 
 #print(Q17[['id','house_age','yr_renovated']])
 
-print(Q17.shape)
+#print(Q17.shape)
 
 #print(data[['id','house_age','yr_renovated']])
 
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+#
+# Exercício 18
+# 18. Selecione as colunas: "id", "date", "price", "floors", "zipcode" pelos métodos:
+#		18.1. Direto pelo nome das colunas
+#		18.2. Pelos índices
+#		18.3. Pelos índices das linhas e os nomes das colunas
+#		18.4. Pelos índices booleanos
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
+#Colunas:
+#'id', 'date', 'price', 'bedrooms', 'bathrooms', 'sqft_living',
+#       'sqft_lot', 'floors', 'waterfront', 'view', 'condition', 'grade',
+#       'sqft_above', 'sqft_basement', 'yr_built', 'yr_renovated', 'zipcode',
+#       'lat', 'long', 'house_age', 'dormitory_type', 'standard',
+#       'condition_type'
 
+#dataQ18 = data.iloc[0:15,:]
+
+#print('18.1) Resposta:')
+#print(dataQ18[['id','date','price','floors','zipcode']])
+
+#print('\n18.2) Resposta:')
+#print(dataQ18.iloc[:, [0,1,2,7,16]])
+
+#cols183 = ['id','date','price','floors','zipcode']
+#print('\n18.3) Resposta:')
+#print(dataQ18.loc[0:10,cols183])
+
+#cols184 = [True,True,True,False,False,False,False,True,False,False,False,False,False,False,False,False,True,False,False,False,False,False,False]
+#print('\n18.4) Resposta:')
+#print(data.loc[0:10,cols184])
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 19
+# Salve um arquivo ".csv" somente com as colunas do item 10
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+Q19 = (data[data['floors'] == 2.0])
+
+#validando
+#print(Q19[['id','floors']])
+
+Q19.to_csv('datasets/reportQ19_aula02.csv', index=False)
+print('Report gerado com sucesso.')
+
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+# Exercício 20
+# 20. Modifique a cor dos pontos no mapa de "pink" para "verde-escuro"
+#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
+
+# 5. Gostaria de um mapa indicando onde as casas estão localizadas geograficamente.
+# Plotly - Biblioteca que armazena uma funcao que desenha mapa
+#Para instalar, via terminal: pip install plotly
+# Scatter MapBox - Funcao que desenha mapa
+
+#import plotly.express as px
+
+#data_mapa = data[['id', 'lat', 'long', 'price']]
+
+#mapa = px.scatter_mapbox (data_mapa, lat= 'lat', lon = 'long', hover_name='id', hover_data=['price'], color_discrete_sequence=['fuchsia'], zoom=3, height=300)
+
+#mapa.update_layout( mapbox_style='open-street-map')
+#mapa.update_layout(height=600, margin={'r':0, 't':0, 'l':0, 'b':0})
+#mapa.show()
+
+#mapa.write_html('datasets/mapa_house_rocket.html')
+#testar arquivo gerado em HTML com mais calma, pois o atual não está abrindo nos navegadores Android.
