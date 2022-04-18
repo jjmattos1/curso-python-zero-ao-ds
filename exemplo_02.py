@@ -679,28 +679,38 @@ Q19 = (data[data['floors'] == 2.0])
 #validando
 #print(Q19[['id','floors']])
 
-Q19.to_csv('datasets/reportQ19_aula02.csv', index=False)
-print('Report gerado com sucesso.')
+#Q19.to_csv('datasets/reportQ19_aula02.csv', index=False)
+#print('Report gerado com sucesso.')
 
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 # Exercício 20
 # 20. Modifique a cor dos pontos no mapa de "pink" para "verde-escuro"
 #=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#=#
 
-# 5. Gostaria de um mapa indicando onde as casas estão localizadas geograficamente.
 # Plotly - Biblioteca que armazena uma funcao que desenha mapa
 #Para instalar, via terminal: pip install plotly
 # Scatter MapBox - Funcao que desenha mapa
 
-#import plotly.express as px
+import plotly.express as px
 
 #data_mapa = data[['id', 'lat', 'long', 'price']]
 
+Q20DTMap = data[['id','lat','long','price']]
+
 #mapa = px.scatter_mapbox (data_mapa, lat= 'lat', lon = 'long', hover_name='id', hover_data=['price'], color_discrete_sequence=['fuchsia'], zoom=3, height=300)
+
+Q20Map = px.scatter_mapbox (Q20DTMap, lat='lat', lon='long', hover_name='id', hover_data=['price'], color_discrete_sequence=['darkgreen'], zoom=3, height=300)
 
 #mapa.update_layout( mapbox_style='open-street-map')
 #mapa.update_layout(height=600, margin={'r':0, 't':0, 'l':0, 'b':0})
 #mapa.show()
 
+Q20Map.update_layout(mapbox_style='open-street-map')
+Q20Map.update_layout(height=600, margin={'r':0, 't':0, 'l':0, 'b':0})
+#Q20Map.show()
+
 #mapa.write_html('datasets/mapa_house_rocket.html')
 #testar arquivo gerado em HTML com mais calma, pois o atual não está abrindo nos navegadores Android.
+
+# Q20Map.write_html('datasets/mapa_a2_q20.html')
+# testei agora, 07/04/22, e o dado mapa abriu no Android 12 corrramente.
