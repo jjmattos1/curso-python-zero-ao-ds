@@ -1,0 +1,94 @@
+Agenda da aula:
+
+1.	Novas perguntas de negócio
+
+2.	Planejamento da solução
+
+3.	Estrutura de Dados
+
+4.	Transformação de Dados
+
+5.	Exercícios Práticos
+
+
+
+2. Planejamento da solução:
+
+2.1. Produto final (o que eu vou entregar? Planilha, gráfico, modelo de ML...)
+
+- Email + 2 anexos:
+
+- E_mail:  as respostas das perguntas
+
+- Pergunta | Resposta
+
+No Jupyter, o caminho deste dataset em questao ficou assim:
+
+'datasets/kc_house_data.csv'
+
+Perguntas do CEO para esta aula03:
+
+
+
+1.	Qual o número de imóveis por ano de construção?
+
+-	Contar o número de ids por ano de construção
+
+
+
+2.	Qual o menor número de quartos por ano de construção?
+
+-	Filtrar todos os imóveis por ano de construção e selecionar o menor número e quartos
+
+
+
+3.	Qual o preço de compra mais alto por cada número de quarto?
+
+-	Filtrar todos os imóveis por número de quartos e selecionar o de maior preço.
+
+
+
+4.	Qual a soma de todos os preços de compra por número de quartos? 
+
+-	Filtrar todos os imóveis por número de quartos e somar todos os preços
+
+
+
+5.	Qual a soma de todos os preços de compra por número de quartos e banheiros?
+
+-	Filtrar todos os imóveis por número de quartos e por número de banheiros e realizo a soma
+
+-	 de todos os preços
+
+
+
+6.	Qual o tamanho médio das salas dos imóveis por ano de consturção?
+
+-	Filtrar todos os imóveis por ano de construção e fazer a média do tamanho das salas.
+
+
+
+7.	Qual o tamanho mediano das salas dos imóveis por ano de construção?
+
+-	Filtrar todos os imóveis por ano de construção e fazer a mediana do tamanho das salas.
+
+
+
+8.	Qual o desvio-padrão do tamanho das salas dos imóveis por ano de construção?
+
+-	Filtrar todos os imóveis por ano de construção e fazer o desvio-padrão do tamanho das salas
+
+
+
+9.	Como é o crescimento médio dos preços de compras dos imóveis, por ano, por dia e pela semana do ano?
+
+-	Filtrar todos os por ano e fazer um gráfico onde o eixo x eu tenha o ano e o eixo y eu tenha a média do preço do ano.
+
+
+
+10.	Eu gostaria de olhar no mapa e conseguir identificar as casas com o maior preço.
+
+-	Modificar o mapa da entrega da aula anterior fazendo com que os pontos tenham o tamanho dependente do preço.
+
+
+

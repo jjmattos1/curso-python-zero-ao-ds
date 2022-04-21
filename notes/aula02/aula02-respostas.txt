@@ -1,0 +1,36 @@
+BOM DIA GALERAAAA, TUDO BEM COM VOCÊS!! 
+Acabei de fazer os exercícios da Aula 02 de Python e cheguei nesses resultados:
+
+Mais alguém conseguiu? Vamos comparar os resultados!
+
+8. Qual a data mais antiga de construção de um imóvel?
+R: 1900
+
+9. Qual a data mais antiga de renovação de um imóvel?
+R: 1934
+
+10. Quantos imóveis tem 2 andares?
+R: 8241
+
+11. Quantos imóveis estão com a condição igual a “regular” ?
+R: 19.710 imóveis com condição regular.
+
+12. Quantos imóveis estão com a condição igual a “bad”e possuem “vista para água” ?
+R: 2 imóveis "bad" com "vista para água"
+
+13. Quantos imóveis estão com a condição igual a “good” e são “new_house”?
+R: 1701
+
+14. Qual o valor do imóvel mais caro do tipo “studio” ?
+R: 1.247.000,00
+
+15. Quantos imóveis do tipo “apartment” foram reformados em 2015 ?
+R: 0 imóveis 
+
+16. Qual o maior número de quartos que um imóveis do tipo “house” possui ?
+R: 33 quartos
+
+17. Quantos imóveis “new_house” foram reformados no ano de 2014?
+R: 91 imóveis 
+
+Mais tarde, eu vou postar os códigos dos exercícios da AULA 01!
