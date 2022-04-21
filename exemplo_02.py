@@ -707,7 +707,7 @@ Q20Map = px.scatter_mapbox (Q20DTMap, lat='lat', lon='long', hover_name='id', ho
 
 Q20Map.update_layout(mapbox_style='open-street-map')
 Q20Map.update_layout(height=600, margin={'r':0, 't':0, 'l':0, 'b':0})
-#Q20Map.show()
+Q20Map.show()
 
 #mapa.write_html('datasets/mapa_house_rocket.html')
 #testar arquivo gerado em HTML com mais calma, pois o atual não está abrindo nos navegadores Android.
