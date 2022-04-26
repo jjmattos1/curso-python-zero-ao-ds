@@ -28,8 +28,6 @@ No Jupyter, o caminho deste dataset em questao ficou assim:
 
 Perguntas do CEO para esta aula03:
 
-
-
 1.	Qual o número de imóveis por ano de construção?
 
 -	Contar o número de ids por ano de construção
@@ -90,5 +88,27 @@ Perguntas do CEO para esta aula03:
 
 -	Modificar o mapa da entrega da aula anterior fazendo com que os pontos tenham o tamanho dependente do preço.
 
+>>> "Dever de casa" <<<
 
+Novas perguntas do CEO para você:
+
+1. Crie uma nova coluna chamada: "dormitory_type" Se o valor da coluna "bedrooms" for igual à 1 ='studio' Se o valor da coluna "bedrooms" for igual a 2 'apartament' Se o valor da coluna "bedrooms" for maior que 2 "house'
+
+2. Faça um gráfico de barras que represente a soma dos preços pelo número de quartos.
+
+3. Faça um gráfico de linhas que represente a média dos preços pelo ano construção dos imóveis.
+
+4. Faça um gráfico de barras que represente a média dos preços pelo tipo dos dormitórios.
+
+5. Faça um gráfico de linha que mostre a evolução da média dos preços pelo ano da reforma dos imóveis, a partir do ano de 1930.
+
+6. Faça um tabela que mostre a média dos preços por ano de construção e tipo de dormitórios dos imóveis.
+
+7. Crie um Dashboard com os gráficos das questões 02, 03, 04 ( Dashboard: 1 Linha e 2 colunas )
+
+8. Crie um Dashboard com os gráficos das perguntas 02, 04 ( Dashboard: 2 colunas )
+
+9. Crie um Dashboard com os gráficos das perguntas 03, 05 ( Dashboard: 2 Linhas)
+
+10. Faça um gráfico com o tamanho dos pontos sendo igual ao tamanho da sala de estar
 
